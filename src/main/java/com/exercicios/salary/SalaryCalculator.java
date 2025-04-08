@@ -2,6 +2,11 @@ package com.exercicios.salary;
 
 public class SalaryCalculator {
     public double calculate(Employee employee) {
+        
+        if (employee == null || employee.getPosition() == null) {
+            return 0;
+        }
+
         double discount;
         switch (employee.getPosition()) {
             case DESENVOLVEDOR:

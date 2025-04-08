@@ -1,8 +1,5 @@
 package com.exercicios.triangulo;
 
-
-import com.exercicios.triangulo.Triangulo;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -54,12 +51,42 @@ public class TrianguloTest {
     }
 
     @Test
-    void testSomaMenor() {
+    void testSomaIgual3() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(3, 1, 2));
+    }
+
+    @Test
+    void testSomaMenor1() {
         assertEquals("Não é um triângulo", Triangulo.verificarTipo(1, 2, 4));
+    }
+
+    @Test
+    void testSomaMenor2() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(1, 4, 2));
+    }
+
+    @Test
+    void testSomaMenor3() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(4, 1, 2));
     }
 
     @Test
     void testTodosZero() {
         assertEquals("Não é um triângulo", Triangulo.verificarTipo(0, 0, 0));
+    }
+
+    @Test
+    void testDoisLadosZero() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(0, 0, 1));
+    }
+
+    @Test
+    void testTodosNegativos() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(-1, -2, -3));
+    }
+
+    @Test
+    void testDoisLadosNegativos() {
+        assertEquals("Não é um triângulo", Triangulo.verificarTipo(-1, -1, 3));
     }
 }
